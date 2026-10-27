@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "type": "image",
+      "src": "hart-house-theatre.jpg",
+      "caption": "Hart House Theatre — site setting for AuricleSync"
+    },
+    {
+      "type": "image",
+      "src": "group-photo.jpg",
+      "caption": "AuricleSync team at the University of Toronto engineering showcase"
+    },
+    {
+      "type": "pdf",
+      "src": "auriclesync-presentation.pdf",
+      "caption": "Showcase presentation — full document"
+    },
+    {
+      "type": "pdf",
+      "src": "auriclesync-design-specifications.pdf",
+      "caption": "Conceptual design specifications — full document"
+    }
+  ]
+}

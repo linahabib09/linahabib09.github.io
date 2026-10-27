@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "type": "image",
+      "src": "finished-device.jpg",
+      "caption": "StealthComm — assembled handheld enclosure"
+    },
+    {
+      "type": "video",
+      "src": "stealthcomm-demo.mp4",
+      "caption": "Prototype demonstration: button input and message exchange"
+    },
+    {
+      "type": "image",
+      "src": "input-prototype.jpg",
+      "caption": "Input circuit with momentary button and LED"
+    },
+    {
+      "type": "image",
+      "src": "raspberry-pi-wiring.jpg",
+      "caption": "GPIO hardware connection"
+    },
+    {
+      "type": "image",
+      "src": "breadboard-assembly.jpg",
+      "caption": "Early breadboard prototype"
+    },
+    {
+      "type": "image",
+      "src": "terminal-output.jpg",
+      "caption": "Python terminal showing decoded messages"
+    },
+    {
+      "type": "pdf",
+      "src": "StealthComm-Project-Report.pdf",
+      "caption": "Project documentation — scrollable PDF"
+    },
+    {
+      "type": "code",
+      "src": "morse_code_key.py",
+      "caption": "Python source code — scroll to inspect GPIO and Morse decoding"
+    }
+  ]
+}

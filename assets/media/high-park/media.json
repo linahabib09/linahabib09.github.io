@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "type": "image",
+      "src": "high-park-nature.jpg",
+      "caption": "High Park \u2014 wooded landscape photographed during project research"
+    },
+    {
+      "type": "image",
+      "src": "preview-1.jpg",
+      "caption": "High Park design report \u2014 preview"
+    },
+    {
+      "type": "pdf",
+      "src": "high-park-design-report.pdf",
+      "caption": "High Park design report \u2014 scrollable document"
+    }
+  ]
+}

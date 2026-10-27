@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#171719" name="theme-color"/><meta content="A portable communication device combining Python software with Raspberry Pi GPIO hardware, a tactile button interface, and LED indicators." name="description"/><title>StealthComm | Lina Habib</title><link href="../styles.css" rel="stylesheet"/></head><body><header class="header"><div class="wrap nav"><a class="logo" href="../index.html">LINA<span> / </span>HABIB</a><button aria-expanded="false" aria-label="Toggle navigation" class="hamburger">☰</button><nav class="links"><a href="../index.html#work">Projects</a><a href="../about.html">About</a><a href="../experience.html">Experience</a><a href="../index.html#contact">Contact</a><a href="https://drive.google.com/drive/folders/1hAFGOStIBQBQbwAw6SGD_eBkI6TV8yjy?usp=sharing" rel="noopener" target="_blank">Media archive ↗</a><a class="nav-resume" href="../assets/Lina_Habib_Resume.pdf" rel="noopener" target="_blank">Resume ↗</a></nav></div></header><main id="main"><section class="project-hero wrap"><a class="back" href="../index.html#work">← All projects</a><div class="eyebrow">ELECTRONICS PROTOTYPE</div><h1>StealthComm<span class="punct">.</span></h1><p class="project-subtitle">A Raspberry Pi communication prototype that translates between button-operated Morse code, LED signals, and terminal messages.</p><div class="project-meta"><div><label>CONTEXT</label><span>Personal project</span></div><div><label>TIMELINE</label><span>MAY — JUL 2026</span></div><div><label>TOOLS / TOPICS</label><span>Python, Raspberry Pi, GPIO, Rapid prototyping</span></div></div></section><section aria-label="StealthComm gallery" class="wrap project-gallery" data-gallery="stealthcomm"><div class="gallery-stage"><div aria-live="polite" class="gallery-view"><div class="gallery-intro"><span>PROJECT MEDIA</span><strong>StealthComm</strong><p>Browse prototype photos, the demonstration, project documents and Python code.</p></div></div><button aria-label="Previous media" class="gallery-prev" type="button">‹</button><button aria-label="Next media" class="gallery-next" type="button">›</button></div><div class="gallery-toolbar"><span class="gallery-caption">Project media</span><span class="gallery-counter">0 / 0</span></div><div aria-label="Choose media" class="gallery-thumbnails"></div></section><section class="wrap project-body"><div class="body-title"><span class="eyebrow">PROJECT NOTES</span><h2>Design <em>overview</em></h2></div><div class="body-copy"><h3>Overview</h3><p>StealthComm is a proof-of-concept handheld communication device built around a Raspberry Pi. It converts Morse-code button presses into readable terminal messages and represents incoming terminal messages as LED flashes.</p><h3>How it works</h3><p>Python handles Morse-code translation and GPIO input/output. Short and long button presses represent dots and dashes, while timed gaps distinguish letters and words. An SSH connection links the Raspberry Pi and a remote computer.</p><h3>Design and development</h3><p>I prototyped the physical interface using a push-button, LED, breadboard, and Raspberry Pi; implemented timing-based input recognition and Morse-code translation in Python; then documented setup, operation, and hardware iterations.</p><h3>Next steps</h3><p>The current version demonstrates the concept. Potential refinements include reducing the enclosure size, simplifying the wiring, and using a smaller controller.</p></div></section><section class="wrap media-footnote"><p>For additional source materials, <a href="https://drive.google.com/drive/folders/1hAFGOStIBQBQbwAw6SGD_eBkI6TV8yjy?usp=sharing" rel="noopener" target="_blank">open the media archive ↗</a>.</p></section><section class="wrap next-project"><span class="eyebrow">UP NEXT</span><a href="auriclesync.html">AuricleSync<span>↗</span></a></section></main><footer class="footer wrap"><div><b>LH.</b> <span>Mechanical engineering portfolio</span></div><div><a href="mailto:lina.habib@mail.utoronto.ca">Email</a> · <a href="https://www.linkedin.com/in/linahabib9" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://drive.google.com/drive/folders/1hAFGOStIBQBQbwAw6SGD_eBkI6TV8yjy?usp=sharing" rel="noopener" target="_blank">Media archive</a></div><small>© 2026 Lina Habib</small></footer><script defer="" src="../script.js"></script><script id="embedded-project-media" type="application/json">{
+  "items": [
+    {
+      "type": "image",
+      "src": "finished-device.jpg",
+      "caption": "StealthComm — assembled handheld enclosure"
+    },
+    {
+      "type": "video",
+      "src": "stealthcomm-demo.mp4",
+      "caption": "Prototype demonstration: button input and message exchange"
+    },
+    {
+      "type": "image",
+      "src": "input-prototype.jpg",
+      "caption": "Input circuit with momentary button and LED"
+    },
+    {
+      "type": "image",
+      "src": "raspberry-pi-wiring.jpg",
+      "caption": "GPIO hardware connection"
+    },
+    {
+      "type": "image",
+      "src": "breadboard-assembly.jpg",
+      "caption": "Early breadboard prototype"
+    },
+    {
+      "type": "image",
+      "src": "terminal-output.jpg",
+      "caption": "Python terminal showing decoded messages"
+    },
+    {
+      "type": "pdf",
+      "src": "StealthComm-Project-Report.pdf",
+      "caption": "Project documentation — scrollable PDF"
+    },
+    {
+      "type": "code",
+      "src": "morse_code_key.py",
+      "caption": "Python source code — scroll to inspect GPIO and Morse decoding"
+    }
+  ]
+}
+</script></body></html>

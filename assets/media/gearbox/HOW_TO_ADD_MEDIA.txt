@@ -1,0 +1,10 @@
+Put your photos, PDFs or MP4 videos in this folder.
+Edit media.json and add entries, e.g.:
+{
+  "items": [
+    {"type":"image","src":"assembly.jpg","caption":"Assembly view"},
+    {"type":"video","src":"demo.mp4","caption":"Mechanism demonstration"},
+    {"type":"pdf","src":"drawings.pdf","caption":"Technical drawings"}
+  ]
+}
+The first image becomes the cover image on the homepage and timeline.

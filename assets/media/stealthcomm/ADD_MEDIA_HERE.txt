@@ -1,0 +1,1 @@
+Place JPG, PNG, WEBP, MP4 or PDF project assets in this folder and link them in projects/stealthcomm.html. Do not present the conceptual SVG as a real project render.

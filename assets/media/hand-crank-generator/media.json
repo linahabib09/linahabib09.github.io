@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "type": "image",
+      "src": "generator-prototype.jpg",
+      "caption": "Hand-crank generator prototype \u2014 stepper motor and breadboard circuit"
+    },
+    {
+      "type": "pdf",
+      "src": "generator-documentation.pdf",
+      "caption": "Design documentation, circuit explanation and process notes"
+    }
+  ]
+}
