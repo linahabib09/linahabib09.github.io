@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161719">
+  <meta name="description" content="Interactive 3D CAD assembly of a can opener, including gears, shafts and the assembly base.">
+  <title>Can Opener Assembly | Lina Habib</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .co-shell{max-width:1180px;margin:0 auto;padding:0 32px}
+    .co-hero{padding:64px 0 20px}
+    .co-back{color:var(--muted,#b7b4b2);font-size:.85rem}
+    .co-back:hover{color:var(--accent,#dc635e)}
+    .co-kicker{color:var(--accent,#dc635e);font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:46px 0 8px}
+    .co-hero h1{font-size:clamp(2.8rem,6vw,5.3rem);margin:0 0 18px}
+    .co-lead{font-size:1.1rem;max-width:760px;color:var(--muted,#b7b4b2)}
+    .co-meta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 22px}
+    .co-chip{border:1px solid var(--stroke,#39383a);padding:5px 12px;font-size:.75rem;color:var(--muted,#b7b4b2);border-radius:20px}
+    .co-section-title{font-size:1.5rem;margin:28px 0 16px;font-weight:600}
+    .co-stage{position:relative;border:1px solid var(--stroke,#39383a);background:radial-gradient(circle at 50% 40%,#323033,#171719 76%);overflow:hidden;min-height:420px}
+    .co-stage model-viewer{display:block;width:100%;height:clamp(420px,62vw,690px);--poster-color:transparent;outline:none}
+    .co-stage model-viewer:focus-visible{outline:2px solid var(--accent,#dc635e);outline-offset:-3px}
+    .co-stage::after{content:"INTERACTIVE CAD / GLB";pointer-events:none;position:absolute;top:18px;left:18px;color:#dfd9d7;font-size:.67rem;letter-spacing:.18em;background:#161719b8;padding:8px 12px}
+    .co-loading{color:#f1e8e4;text-align:center;font-size:.95rem}
+    .co-loader{position:absolute;bottom:0;left:0;right:0;height:3px;background:#39383a;display:none}
+    .co-loader span{display:block;height:100%;width:0;background:var(--accent,#dc635e)}
+    .co-stage.is-loading .co-loader{display:block}
+    .co-toolbar{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin:14px 0}
+    .co-tools{display:flex;flex-wrap:wrap;gap:9px}
+    .co-btn,.co-download{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid #5b5354;border-radius:4px;color:#f3f0ed;background:#262529;font:600 .83rem 'DM Sans',sans-serif;padding:11px 15px;text-decoration:none}
+    .co-btn:hover,.co-download:hover{border-color:var(--accent,#dc635e);color:#f18c85}
+    .co-btn:focus-visible,.co-download:focus-visible{outline:2px solid var(--accent,#dc635e);outline-offset:3px}
+    .co-help{color:var(--muted,#b7b4b2);font-size:.82rem;margin:6px 0 28px}
+    .co-status{color:#ddaaa6;font-size:.88rem;min-height:1.5em}
+    .co-detail{border-top:1px solid var(--stroke,#39383a);padding:22px 0 45px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .co-detail h2{font-size:1.75rem;margin-top:4px}
+    .co-detail p,.co-detail li{color:var(--muted,#b7b4b2)}
+    .co-detail ul{padding-left:20px}
+    .co-detail li{margin-bottom:8px}
+    .co-files{padding:5px 0 80px}
+    .co-file-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .co-file{border:1px solid var(--stroke,#39383a);padding:18px;background:#202124;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .co-file span{display:block;color:var(--muted,#b7b4b2);font-size:.78rem}
+    .co-file a{color:#f18c85;font-weight:600;font-size:.83rem;text-decoration:underline}
+    .co-footer{border-top:1px solid var(--stroke,#39383a);padding:26px 0 45px;color:var(--muted,#b7b4b2);font-size:.84rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    @media(max-width:700px){.co-shell{padding:0 18px}.co-hero{padding-top:35px}.co-detail,.co-file-grid{grid-template-columns:1fr;gap:10px}.co-stage{min-height:300px}.co-stage model-viewer{height:390px}.co-toolbar{display:block}.co-tools{margin-bottom:10px}}
+    @media(prefers-reduced-motion:reduce){.co-stage model-viewer{scroll-behavior:auto}}
+  </style>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Primary navigation">
+      <a class="logo" href="../index.html">LINA <span>/</span> HABIB</a>
+      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="links">
+        <a href="../index.html#work">Projects</a>
+        <a href="../about.html">About</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="nav-resume" href="../assets/Lina_Habib_Resume.pdf?v=2" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="co-shell">
+    <section class="co-hero">
+      <a class="co-back" href="../index.html#work">← All projects</a>
+      <p class="co-kicker">CAD assembly / mechanism design · November 2026</p>
+      <h1>Can Opener Assembly<span style="color:var(--accent,#dc635e)">.</span></h1>
+      <p class="co-lead">Designed in SolidWorks in November 2026, this can opener assembly brings together a motor-driven gear train, shafts, and supporting components in a compact mechanical layout. Explore the assembly interactively to inspect how the parts fit together.</p>
+      <div class="co-meta"><span class="co-chip">SolidWorks</span><span class="co-chip">Mechanical assembly</span><span class="co-chip">Gear train</span><span class="co-chip">Interactive 3D model</span></div>
+    </section>
+
+    <section aria-labelledby="viewer-heading">
+      <h2 class="co-section-title" id="viewer-heading">Interactive 3D model</h2>
+      <div class="co-stage is-loading" id="model-stage">
+        <model-viewer id="can-opener-model"
+          src="../assets/models/can_opener_assembly.glb"
+          alt="Rotatable 3D CAD model of a mechanical can opener assembly with gears, shafts, motor and base."
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="2200"
+          rotation-per-second="12deg"
+          shadow-intensity="0.7"
+          exposure="1.15"
+          environment-image="neutral"
+          interaction-prompt="auto"
+          touch-action="pan-y"
+          loading="eager"
+          reveal="auto"
+          ar-status="not-presenting"
+          tabindex="0">
+          <div slot="poster" class="co-loading">Loading the 3D assembly…</div>
+          <div slot="progress-bar" class="co-loader" id="model-loader"><span id="model-progress"></span></div>
+        </model-viewer>
+      </div>
+      <div class="co-toolbar">
+        <div class="co-tools">
+          <button class="co-btn" type="button" id="toggle-rotate" aria-pressed="true">Pause rotation</button>
+          <button class="co-btn" type="button" id="reset-camera">Reset view</button>
+          <button class="co-btn" type="button" id="toggle-fullscreen">Full screen</button>
+        </div>
+        <a class="co-download" href="../assets/models/can_opener_assembly.glb" download>Download 3D model (.glb) ↓</a>
+      </div>
+      <p class="co-help">Drag to rotate · Scroll or pinch to zoom · Use the buttons to pause motion or reset the camera.</p>
+      <p class="co-status" id="model-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="co-detail">
+      <div>
+        <p class="co-kicker">Project notes</p>
+        <h2>Mechanical assembly</h2>
+        <p>This project focuses on the arrangement of a motor-driven gear train and supporting shafts within a can opener mechanism. Individual gears, the motor and the assembly base were modelled and brought together in SolidWorks to study component placement and mechanical integration. The interactive 3D model is intended for visual inspection, not a demonstration of validated motion or performance. Original CAD parts and drawings are available below.</p>
+      </div>
+      <div>
+        <p class="co-kicker">Included components</p>
+        <h2>Parts and drawings</h2>
+        <ul><li>Assembly base and motor with 8-tooth gear</li><li>8-tooth, 52-tooth, and 60-tooth gear parts</li><li>Supporting shafts</li><li>Two associated SolidWorks gear drawings</li></ul>
+      </div>
+    </section>
+
+    <section class="co-files" aria-labelledby="files-title">
+      <p class="co-kicker">Source files</p>
+      <h2 id="files-title" class="co-section-title">SolidWorks downloads</h2>
+      <div class="co-file-grid">
+        <div class="co-file"><div><strong>Can Opener Assembly</strong><span>Native SolidWorks assembly (.SLDASM)</span></div><a download href="../assets/cad/can-opener/Can%20Opener%20Assembly.SLDASM">Download ↓</a></div>
+        <div class="co-file"><div><strong>52 Teeth Gear Drawing</strong><span>SolidWorks drawing (.SLDDRW)</span></div><a download href="../assets/cad/can-opener/52%20Teeth%20Gear%20Drawing.SLDDRW">Download ↓</a></div>
+        <div class="co-file"><div><strong>60 Tooth Gear Drawing</strong><span>SolidWorks drawing (.SLDDRW)</span></div><a download href="../assets/cad/can-opener/60%20Tooth%20Gear%20Drawing.SLDDRW">Download ↓</a></div>
+        <div class="co-file"><div><strong>All component files</strong><span>Available in the GitHub source folder for this project</span></div><a href="https://github.com/linahabib09/linahabib09.github.io/tree/main/assets/cad/can-opener" target="_blank" rel="noopener noreferrer">Browse ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="co-footer co-shell"><span>LH. Mechanical engineering portfolio</span><a href="../index.html">Back to portfolio ↑</a></footer>
+  <script src="../script.js" defer></script>
+  <script>
+    (function(){
+      const model=document.getElementById('can-opener-model');
+      const stage=document.getElementById('model-stage');
+      const status=document.getElementById('model-status');
+      const rotate=document.getElementById('toggle-rotate');
+      const fs=document.getElementById('toggle-fullscreen');
+      const progress=document.getElementById('model-progress');
+      model.addEventListener('load',()=>{stage.classList.remove('is-loading');status.textContent='3D assembly loaded. You can rotate and inspect it.';});
+      model.addEventListener('error',e=>{stage.classList.remove('is-loading');status.textContent='Unable to load the 3D model. Check the GLB path and publish the page through GitHub Pages (not file://).';console.error('3D model error',e);});
+      model.addEventListener('progress',e=>{progress.style.width=((e.detail&&e.detail.totalProgress||0)*100)+'%';});
+      rotate.addEventListener('click',()=>{model.autoRotate=!model.autoRotate;rotate.textContent=model.autoRotate?'Pause rotation':'Start rotation';rotate.setAttribute('aria-pressed',String(model.autoRotate));});
+      document.getElementById('reset-camera').addEventListener('click',()=>{model.cameraOrbit='auto auto auto';model.cameraTarget='auto auto auto';model.fieldOfView='auto';model.jumpCameraToGoal();});
+      fs.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(stage.requestFullscreen)await stage.requestFullscreen();else status.textContent='Full screen is not supported by this browser.';}catch(e){status.textContent='Full-screen mode could not be opened.';}});
+      document.addEventListener('fullscreenchange',()=>{fs.textContent=document.fullscreenElement?'Exit full screen':'Full screen';});
+    })();
+  </script>
+</body>
+</html>
